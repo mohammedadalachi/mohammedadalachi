@@ -1,4 +1,4 @@
-# Hi, I'm Mohammed
+# Hi, I'm Abderrahmane
 
 Second-year Artificial Intelligence engineering student at Xiamen University Malaysia. I build computer vision and rule-based AI projects in Python and C.
 
