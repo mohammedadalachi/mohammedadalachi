@@ -26,3 +26,5 @@ Data structures and machine learning fundamentals.
 </picture>
 
 <img src="scouter/power-level.svg" width="420" alt="Power level scouter" />
+
+<img src="saiyan/blasts.svg" width="800" alt="Vegeta firing blasts at my contributions" />
