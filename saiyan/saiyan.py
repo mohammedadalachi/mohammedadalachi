@@ -1,3 +1,4 @@
+import base64
 import os
 
 import requests
@@ -12,31 +13,9 @@ if response.status_code != 200:
 calendar = response.json()["data"]["user"]["contributionsCollection"]["contributionCalendar"]
 weeks = calendar["weeks"]
 
-SPRITE = [
-    "......H....H......",
-    ".....HH...HHH.....",
-    "....HHHH.HHHH.....",
-    "...HHHHHHHHHHH....",
-    "...HHHHHHHHHHH....",
-    "...HHSHHHHSHHH....",
-    "...HSSSHHSSSH.....",
-    "...HSESSSSESS.....",
-    "....SSSSSSSS......",
-    ".....SSSSSS.......",
-    "...GGWWWWWWGG.....",
-    "..GGGWWBBWWWGWWWWW",
-    "..SSBWWBBWWBBBWWWW",
-    "..SSBBBBBBBBBSSSSS",
-    "....BBBBBBBBB.....",
-    "....BBBBBBBBB.....",
-    ".....BB...BB......",
-    ".....BB...BB......",
-    ".....BB...BB......",
-    "....WWW...WWW.....",
-    "....WWW...WWW.....",
-]
-COLORS = {"H": "#1b1b2f", "S": "#f2c29b", "E": "#111111", "G": "#e0a800", "W": "#f4f4f4", "B": "#2748d6"}
-PIXEL = 5
+with open("saiyan/vegeta.png", "rb") as file:
+    vegeta = base64.b64encode(file.read()).decode("ascii")
+
 CELL = 14
 SQUARE = 11
 LEVELS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
@@ -48,19 +27,15 @@ grid_x = 120
 grid_y = 26
 width = grid_x + len(weeks) * CELL + 14
 height = 150
-sprite_x = 10
-sprite_y = 22
-hand_x = sprite_x + 17 * PIXEL
-hand_y = sprite_y + 12 * PIXEL + 2
+figure_x = 14
+figure_y = 12
+hand_x = figure_x + 85
+hand_y = figure_y + 65
 
 parts = []
 parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">')
 parts.append(f'<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="10" fill="#0d1117" stroke="#39ff14" stroke-width="2"/>')
-
-for row, line in enumerate(SPRITE):
-    for col, letter in enumerate(line):
-        if letter != ".":
-            parts.append(f'<rect x="{sprite_x + col * PIXEL}" y="{sprite_y + row * PIXEL}" width="{PIXEL}" height="{PIXEL}" fill="{COLORS[letter]}"/>')
+parts.append(f'<image x="{figure_x}" y="{figure_y}" width="90" height="126" href="data:image/png;base64,{vegeta}"/>')
 
 css = []
 x_end = grid_x + len(weeks) * CELL
