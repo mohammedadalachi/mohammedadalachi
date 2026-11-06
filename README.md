@@ -1,5 +1,7 @@
 # Hi, I'm Abderrahmane
 
+<img src="https://readme-typing-svg.demolab.com/?lines=AI+engineering+student;Python+and+C;Computer+vision&font=Fira+Code&width=420&height=40&duration=3000&pause=1000" alt="AI engineering student, Python and C, Computer vision" />
+
 Second-year Artificial Intelligence engineering student at Xiamen University Malaysia. I build computer vision and rule-based AI projects in Python and C.
 
 ![stack](https://icon-marquee.giann.dev/v1/icons?i=py,c,flask,opencv,numpy,html,css,js)
