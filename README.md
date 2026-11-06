@@ -24,3 +24,5 @@ Data structures and machine learning fundamentals.
   <source media="(prefers-color-scheme: light)" srcset="snake/snake.svg" />
   <img alt="Contribution snake" src="snake/snake.svg" />
 </picture>
+
+<img src="scouter/power-level.svg" width="420" alt="Power level scouter" />

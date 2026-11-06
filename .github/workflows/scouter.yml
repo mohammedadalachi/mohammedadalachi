@@ -1,0 +1,40 @@
+name: Scouter
+
+on:
+  schedule:
+    - cron: "50 0 * * *"
+  workflow_dispatch:
+  push:
+    paths: [.github/workflows/scouter.yml, scouter/scouter.py]
+
+permissions:
+  contents: write
+
+concurrency: scouter
+
+jobs:
+  scouter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python -m pip install requests
+      - name: Draw the power level
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scouter/scouter.py
+      - name: Commit the scouter if it changed
+        shell: bash
+        run: |
+          git add scouter/power-level.svg
+          if git diff --cached --quiet; then
+            echo "The scouter is unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet --message "scouter: update the power level"
+          git push --quiet
