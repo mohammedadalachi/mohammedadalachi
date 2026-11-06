@@ -16,3 +16,9 @@ Second-year Artificial Intelligence engineering student at Xiamen University Mal
 Data structures and machine learning fundamentals.
 
 <img src="koi/koi.gif" width="256" alt="My koi" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="snake/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="snake/snake.svg" />
+  <img alt="Contribution snake" src="snake/snake.svg" />
+</picture>
