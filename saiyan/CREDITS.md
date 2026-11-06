@@ -1,0 +1,1 @@
+Vegeta 3D model: "Vegeta From Dragon Ball - Textured and Rigged" by Light.k, licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), from https://sketchfab.com/3d-models/none-41a0b494147e4bf4a3b2b2645d4156c6 . Dragon Ball characters belong to Akira Toriyama and Toei Animation.
