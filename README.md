@@ -14,3 +14,5 @@ Second-year Artificial Intelligence engineering student at Xiamen University Mal
 ## Currently learning
 
 Data structures and machine learning fundamentals.
+
+<img src="koi/koi.gif" width="256" alt="My koi" />
